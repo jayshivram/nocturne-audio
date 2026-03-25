@@ -1,20 +1,151 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img alt="Nocturne Audio Banner" src="assets/nocturne_banner.svg" />
+
+### A modern, feature-rich music player for Android
+
+[![Release](https://img.shields.io/github/v/release/jayshivram/nocturne-audio?style=flat-square)](https://github.com/jayshivram/nocturne-audio/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](#license)
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## About
 
-View your app in AI Studio: https://ai.studio/apps/749746d5-cf79-469d-9b89-ec7b3455afac
+Nocturne Audio is a sleek, offline music player built with modern web technologies and compiled for Android using Capacitor. It scans your device for local music files, extracts metadata and album art, and delivers an immersive listening experience with a dark-themed UI.
 
-## Run Locally
+## Features
 
-**Prerequisites:**  Node.js
+**Library Management**
+- Automatic music scanning with support for MP3, FLAC, M4A, WAV, OGG, Opus, AAC, WMA, and WebM
+- Metadata extraction — album art, genre, year, track numbers, bitrate, sample rate
+- Browse by Songs, Albums, Artists, or Folders
+- Sort by title, artist, album, duration, date added, or play count
+- Full-text search across your entire library
 
+**Playback**
+- Queue management — play next, add to queue
+- Repeat modes — Off, Repeat All, Repeat One
+- Shuffle mode
+- Crossfade support (0–5 seconds)
+- Gapless playback
+- Sleep timer (5–90 minutes)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**10-Band Equalizer**
+- Parametric EQ from 32 Hz to 16 kHz with ±12 dB gain per band
+- 7 built-in presets — Flat, Bass Boost, Vocal, Classical, Rock, Jazz, Electronic
+- Save your own custom presets
+
+**Playlists & Favorites**
+- Create and manage custom playlists
+- Like/favorite tracks with a single tap
+- Auto-generated Recently Played and Most Played lists
+
+**UI & Experience**
+- Full-screen player with blurred album art background
+- Dynamic accent colors from album artwork
+- Mini player for quick controls while browsing
+- Time-aware greetings on the home screen
+- Haptic feedback on interactions
+- Native Android media notification controls (play/pause/skip from notification and lock screen)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 19 + TypeScript |
+| Build | Vite 6 |
+| Styling | Tailwind CSS 4 |
+| State | Zustand 5 (persisted) |
+| Audio | Howler.js + Web Audio API |
+| Database | Dexie (IndexedDB) |
+| Native | Capacitor 8 |
+| Animation | Motion (Framer Motion) |
+| Icons | Lucide React |
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [Android Studio](https://developer.android.com/studio) (for Android builds)
+- Java 17+ (JDK)
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run in the browser (development)
+
+```bash
+npm run dev
+```
+
+Opens at [http://localhost:3000](http://localhost:3000).
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Build the Android APK
+
+```bash
+npm run build
+npx cap sync android
+cd android
+./gradlew assembleRelease    # Linux/macOS
+.\gradlew.bat assembleRelease  # Windows
+```
+
+The signed APK will be at `android/app/build/outputs/apk/release/app-release.apk`.
+
+### Run on an Android device/emulator
+
+```bash
+npx cap open android
+```
+
+This opens the project in Android Studio where you can run it directly on a connected device or emulator.
+
+## Project Structure
+
+```
+src/
+├── App.tsx                  # Root component with navigation
+├── components/
+│   ├── HomeScreen.tsx       # Home with greeting & quick actions
+│   ├── LibraryScreen.tsx    # Songs, Albums, Artists, Folders
+│   ├── SearchScreen.tsx     # Full-text search
+│   ├── PlaylistsScreen.tsx  # Playlist management
+│   ├── EqualizerScreen.tsx  # 10-band EQ with presets
+│   ├── SettingsScreen.tsx   # App settings & library stats
+│   ├── FullPlayer.tsx       # Immersive full-screen player
+│   ├── MiniPlayer.tsx       # Compact player overlay
+│   └── BottomNav.tsx        # Navigation bar
+├── services/
+│   ├── audioEngine.ts       # Howler.js + Web Audio API playback
+│   ├── fileScanner.ts       # Device file scanning & metadata
+│   ├── mediaControls.ts     # Android notification controls
+│   ├── playlistManager.ts   # Playlist CRUD operations
+│   └── capacitorBridge.ts   # Native bridge utilities
+├── store/
+│   └── useMusicStore.ts     # Zustand store (library, playback, UI)
+├── db/
+│   └── musicDatabase.ts     # Dexie IndexedDB schema
+└── types.ts                 # TypeScript interfaces
+android/                     # Capacitor Android project
+```
+
+## Download
+
+Grab the latest APK from the [Releases](https://github.com/jayshivram/nocturne-audio/releases) page.
+
+> **Note:** You may need to enable *Install from unknown sources* in your Android settings.
+
+## License
+
+MIT

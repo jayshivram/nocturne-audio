@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <radialGradient id="bg-glow" cx="22%" cy="50%" r="42%">
+      <stop offset="0%" stop-color="#1e1650" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#090a14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moon-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6456b0" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#4030a0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#1a1060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moon-fill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#eeeef8"/>
+      <stop offset="100%" stop-color="#cccce6"/>
+    </radialGradient>
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4535a8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4535a8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="#090a14"/>
+  <rect width="1200" height="300" fill="url(#bg-glow)"/>
+
+  <!-- Concentric vinyl/orbital rings — centered at 210,155 -->
+  <circle cx="210" cy="155" r="268" fill="none" stroke="#151728" stroke-width="0.6"/>
+  <circle cx="210" cy="155" r="238" fill="none" stroke="#161829" stroke-width="0.6"/>
+  <circle cx="210" cy="155" r="208" fill="none" stroke="#161829" stroke-width="0.7"/>
+  <circle cx="210" cy="155" r="178" fill="none" stroke="#171930" stroke-width="0.6"/>
+  <circle cx="210" cy="155" r="148" fill="none" stroke="#16182c" stroke-width="0.7"/>
+  <circle cx="210" cy="155" r="118" fill="none" stroke="#171930" stroke-width="0.6"/>
+  <circle cx="210" cy="155" r="88"  fill="none" stroke="#16182c" stroke-width="0.7"/>
+  <circle cx="210" cy="155" r="58"  fill="none" stroke="#171930" stroke-width="0.6"/>
+
+  <!-- Moon glow halo -->
+  <circle cx="200" cy="88" r="85" fill="url(#moon-halo)"/>
+
+  <!-- Crescent moon: bright circle minus offset dark circle -->
+  <circle cx="200" cy="88" r="58" fill="url(#moon-fill)"/>
+  <circle cx="232" cy="80" r="50" fill="#090a14"/>
+
+  <!-- Tonearm from center to upper-right endpoint -->
+  <line x1="210" y1="155" x2="286" y2="74"
+    stroke="#35365a" stroke-width="1.3" stroke-linecap="round"/>
+
+  <!-- Tonearm endpoint glow -->
+  <circle cx="286" cy="74" r="7" fill="#3d2e80" opacity="0.5"/>
+  <circle cx="286" cy="74" r="3.5" fill="#7060c8"/>
+
+  <!-- Center dot -->
+  <circle cx="210" cy="155" r="8" fill="url(#center-glow)"/>
+  <circle cx="210" cy="155" r="4.5" fill="#100e1e"/>
+  <circle cx="210" cy="155" r="2.5" fill="#5040a8"/>
+
+  <!-- Small needle dot near moon -->
+  <circle cx="214" cy="157" r="2" fill="#5040a8" opacity="0.7"/>
+
+  <!-- Vertical separator line -->
+  <line x1="378" y1="60" x2="378" y2="240"
+    stroke="#1e1e38" stroke-width="0.7"/>
+
+  <!-- NOCTURNE wordmark -->
+  <text
+    x="414" y="148"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="70"
+    font-weight="200"
+    letter-spacing="14"
+    fill="#e6e6f4">NOCTURNE</text>
+
+  <!-- AUDIO subtitle -->
+  <text
+    x="418" y="188"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="20"
+    font-weight="300"
+    letter-spacing="22"
+    fill="#5d50a8">AUDIO</text>
+
+  <!-- Thin rule under subtitle -->
+  <line x1="414" y1="205" x2="960" y2="205"
+    stroke="#1e1e3a" stroke-width="0.6"/>
+
+  <!-- Accent dots row -->
+  <circle cx="414" cy="224" r="2.2" fill="#5d50a8"/>
+  <circle cx="426" cy="224" r="2.2" fill="#3a3060" opacity="0.7"/>
+  <circle cx="438" cy="224" r="2.2" fill="#252048" opacity="0.4"/>
+
+</svg>
