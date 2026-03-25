@@ -149,3 +149,14 @@ Grab the latest APK from the [Releases](https://github.com/jayshivram/nocturne-a
 ## License
 
 MIT
+
+## Disclaimer
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+- **No Liability** — The developer assumes no responsibility for any damage, data loss, or issues arising from the use or misuse of this application.
+- **No Warranty** — This software is provided without any guarantees of functionality, reliability, or fitness for any particular purpose.
+- **User Responsibility** — Users are solely responsible for how they use this application, including compliance with all applicable local, state, and international laws.
+- **Third-Party Content** — This app plays locally stored audio files. The developer does not host, distribute, or endorse any copyrighted content. Users are responsible for ensuring they have the legal right to play any audio files on their device.
+- **Third-Party Dependencies** — This project uses open-source libraries and plugins. The developer is not responsible for vulnerabilities, bugs, or issues originating from third-party dependencies.
+- **Privacy** — This app operates entirely offline and does not collect, transmit, or store any personal data on external servers. All data remains on the user's device.
