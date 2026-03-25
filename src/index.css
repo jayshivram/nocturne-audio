@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0A0D;
+  --color-surface: #121217;
+  --color-accent: #8B5CF6; /* Default violet, will be dynamic */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+@layer base {
+  html {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background-color: #0A0A0D;
+  }
+  body {
+    @apply bg-background text-text-primary font-sans antialiased overflow-hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.glass {
+  @apply bg-gradient-to-br from-surface/80 to-surface/40 backdrop-blur-2xl border border-white/[0.03] shadow-[0_8px_32px_rgba(0,0,0,0.24)];
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
